@@ -1,2 +1,23 @@
+def print_receipt(date, discount, products):
+    year, month, day = date.split('-')
+    keys = list(products.keys())
+    values = list(products.values())
+    s = 0
+
+    print(f'''=======КАССОВЫЙ ЧЕК=======\n
+Дата покупки: {day}.{month}.{year}\n''')
+
+    for i in range(len(products)):
+        cost = values[i][0] * values[i][1]
+        new_cost = cost / 100 * discount
+        s += cost - new_cost
+        print(f'{i + 1}. {keys[i]} {values[i][1]} * {values[i][0]} = {cost:.1f}')
+        print(f'Стоимость со скидкой: {cost - new_cost:.1f}\n')
+
+    print(f'''СКИДКА: {discount}%\n\n==========================\n
+СУММА ПО ЧЕКУ: {s:.1f}''')
+
+
+
 
     
