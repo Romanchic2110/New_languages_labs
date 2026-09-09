@@ -17,7 +17,6 @@ def print_receipt(date, discount, products):
     print(f'''СКИДКА: {discount}%\n\n==========================\n
 СУММА ПО ЧЕКУ: {s}''')
 
-print_receipt(date = '2025-02-03', discount = 5, products = {'молоко': (1, 100.0), 'сок': (2, 120.9)})
 
 
     
