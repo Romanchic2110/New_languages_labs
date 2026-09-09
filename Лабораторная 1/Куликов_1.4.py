@@ -1,4 +1,4 @@
-def decode(text, step):
+def encode(text, step):
     alp = 'abcdefghijklmnopqrstuvwxyz'
     if 1 <= step <= 26:
         res = []

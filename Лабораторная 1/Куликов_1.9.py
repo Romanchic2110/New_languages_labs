@@ -11,13 +11,13 @@ def print_receipt(date, discount, products):
         cost = values[i][0] * values[i][1]
         new_cost = cost / 100 * discount
         s += cost - new_cost
-        print(f'{i + 1}. {keys[i]} {values[i][1]} * {values[i][0]} = {cost:.1f}')
-        print(f'Стоимость со скидкой: {cost - new_cost:.1f}\n')
+        print(f'{i + 1}. {keys[i]} {values[i][1]} * {values[i][0]} = {cost}')
+        print(f'Стоимость со скидкой: {cost - new_cost}\n')
 
     print(f'''СКИДКА: {discount}%\n\n==========================\n
-СУММА ПО ЧЕКУ: {s:.1f}''')
+СУММА ПО ЧЕКУ: {s}''')
 
-
+print_receipt(date = '2025-02-03', discount = 5, products = {'молоко': (1, 100.0), 'сок': (2, 120.9)})
 
 
     

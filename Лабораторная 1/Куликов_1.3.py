@@ -1,8 +1,17 @@
 def relate_and_translate(alphabet, text):
-    alp = 'absdefghigklmnopqrstuvwxyz'
+    alp = 'abcdefghijklmnopqrstuvwxyz'
     alphabet = alphabet.lower()
+
     res = []
-    for i in text.lower():
-        index = alp.index(i)
-        res.append(alphabet[index])
+    for char in text:
+        if char.isalpha():
+            if char.islower():
+                index = alp.index(char)
+                res.append(alphabet[index])
+            else:
+                index = alp.index(char.lower())
+                res.append(alphabet[index].upper())
+        else:
+            res.append(char)
+
     return ''.join(res)
