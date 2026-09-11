@@ -12,11 +12,10 @@ def print_receipt(date, discount, products):
         new_cost = cost / 100 * discount
         s += cost - new_cost
         print(f'{i + 1}. {keys[i]} {values[i][1]} * {values[i][0]} = {cost}')
-        print(f'Стоимость со скидкой: {cost - new_cost}\n')
+        print(f'Стоимость со скидкой: {cost - new_cost:.1f}\n')
 
     print(f'''СКИДКА: {discount}%\n\n==========================\n
-СУММА ПО ЧЕКУ: {s}''')
-
+СУММА ПО ЧЕКУ: {s:.1f}''')
 
 
     
