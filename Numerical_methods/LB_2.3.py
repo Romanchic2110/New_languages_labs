@@ -1,10 +1,5 @@
 import math
 
-x_nodes = [0.16, 0.18, 0.19, 0.22]
-y_nodes = [math.cos(x) for x in x_nodes] 
-x_res = 0.165
-
-
 def lagrange_interpolation(x_nodes, y_nodes, x):
     n = len(x_nodes)
     res = 0
@@ -60,6 +55,10 @@ def error_estimate(x_nodes, x_res):
 
     return abs(M_n1 / math.factorial(n + 1) * omega)
 
+
+x_nodes = [0.16, 0.18, 0.19, 0.22]
+y_nodes = [math.cos(x) for x in x_nodes] 
+x_res = 0.165
 
 lagrange_val = lagrange_interpolation(x_nodes, y_nodes, x_res)
 newton_val = newton_interpolation(x_nodes, y_nodes, x_res)
