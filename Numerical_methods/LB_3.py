@@ -54,14 +54,15 @@ def select_nodes(x_nodes, y_nodes, t, k=4):
     return xs, ys
 
 
+
+
 x_nodes = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 y_nodes = [0.946083, 1.028685, 1.108047, 1.183958, 1.256227,
            1.324684, 1.389181, 1.449592, 1.505817, 1.557775]
 
+t_points = [0.129140, 0.766507, 0.238812, 1.183944]
 
-t_points = [0.129140, 0.766507, 0.238812]
-
-print(f"Точки интерполяции: t1 = {t_points[0]}, t2 = {t_points[1]}, t3 = {t_points[2]}")
+print(f"Точки интерполяции: t1 = {t_points[0]}, t2 = {t_points[1]}, t3 = {t_points[2]}, a = {t_points[3]}")
 
 for i, t in enumerate(t_points, 1):
     xs, ys = select_nodes(x_nodes, y_nodes, t, k=4)
@@ -69,8 +70,10 @@ for i, t in enumerate(t_points, 1):
     lag_val = lagrange_interpolation(xs, ys, t)
     new_val = newton_interpolation(xs, ys, t)
     
-    print(f"\nТочка t{i} = {t}")
+    if t_points[3] == t: 
+        print(f"\nТочка a = {t}") 
+    else: 
+        print(f"\nТочка t{i} = {t}")
     print(f"  Использованные узлы: {xs}")
     print(f"  Значение по Лагранжу: {lag_val:.6f}")
     print(f"  Значение по Ньютону:  {new_val:.6f}")
-
